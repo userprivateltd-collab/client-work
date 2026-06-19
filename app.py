@@ -228,6 +228,38 @@ GLOBAL_CSS = """
     /* Footer */
     footer { background: #1e272e; color: #808e9b; text-align: center; padding: 30px; margin-top: auto; font-size: 0.95em; border-top: 4px solid #0fb9b1; }
     footer strong { color: white; }
+        /* =======================================================
+       MOBILE RESPONSIVENESS (Android / iOS Optimization)
+       ======================================================= */
+    @media (max-width: 768px) {
+        /* Stack the navigation bar */
+        .navbar { flex-direction: column; padding: 15px; gap: 15px; text-align: center; }
+        .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .nav-links a { padding: 8px 12px; font-size: 0.9em; width: 48%; text-align: center; }
+        .nav-links a.admin-btn { width: 100%; }
+        
+        /* Make form fields stack vertically instead of side-by-side */
+        .form-grid { grid-template-columns: 1fr; gap: 15px; }
+        .form-group.full-width { grid-column: span 1; }
+        
+        /* Adjust card padding for small screens */
+        .card { padding: 20px; margin-bottom: 20px; }
+        
+        /* Adjust text sizes */
+        h1 { font-size: 1.8em; }
+        h2 { font-size: 1.5em; }
+        
+        /* Make buttons stretch full width */
+        .btn { width: 100%; display: block; margin-bottom: 10px; }
+        
+        /* Stack the search bar */
+        .search-box { flex-direction: column; padding: 15px; }
+        
+        /* Ensure table doesn't break the screen width */
+        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 6px; }
+        th, td { padding: 10px; font-size: 0.85em; }
+    }
+    
 """
 
 def render_page(title, content, active_page="dashboard"):
